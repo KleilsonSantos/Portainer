@@ -1,37 +1,3 @@
-# 🚀 Portainer com Docker Compose
-
-![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&style=flat-square)
-![Portainer](https://img.shields.io/badge/Portainer-Management-orange?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-
-Portainer é uma poderosa ferramenta de gerenciamento de containers que simplifica a administração de ambientes Docker e Kubernetes. Este repositório fornece um exemplo prático de como configurar o Portainer usando **Docker Compose**.
-
----
-
-## 📖 O que é o Portainer?
-
-O **Portainer** é uma interface gráfica para gerenciar containers, imagens, volumes e redes Docker. Ele é ideal para desenvolvedores e administradores que desejam uma solução simples e eficiente para gerenciar seus ambientes de containerização.
-
----
-
-## 🛠️ Configuração do Ambiente
-
-### Pré-requisitos
-
-Antes de começar, certifique-se de ter os seguintes itens instalados:
-
-- 🐳 **Docker** (versão 20.10 ou superior)
-- 🐙 **Docker Compose** (versão 2.0 ou superior)
-
-### Passos para Configuração
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
-
-
-
 # 🚀 Portainer com Docker Compose 
 ## [Status: 🚧 Em Construção] - 🏗️ melhorias em andamento!
 
@@ -62,7 +28,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/KleilsonSantos/Portainer
    cd seu-repositorio
    ```
 
@@ -152,7 +118,7 @@ Este projeto está licenciado sob a licença **MIT**. Consulte o arquivo `LICENS
 Se você tiver dúvidas ou problemas, entre em contato:
 
 - Email: kleilson@icloud.com
-- GitHub Issues: [Abrir uma issue](https://github.com/seu-usuario/seu-repositorio/issues)
+- GitHub Issues: [Abrir uma issue](https://github.com/KleilsonSantos/Portainer/issues)
 
 ---
 
