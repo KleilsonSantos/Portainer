@@ -42,10 +42,48 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
    http://localhost:9000
    ```
 
+## 📺 Referências em Português — Portainer no Ubuntu
+
+Se você quer aprender mais sobre o uso do **Portainer com Docker no Ubuntu**, aqui estão vídeos e artigos em **português brasileiro** que mostram tudo passo a passo. 💡
+
 ---
 
-## ⚙️ Configuração do `docker-compose.yml`
+### 🎥 Vídeos no YouTube
 
+#### 🔹 [Instalando o Portainer no Ubuntu com Docker — Dicas de Linux](https://www.youtube.com/watch?v=V5T1qNXE5Z8)
+- 📺 **Canal:** Dicas de Linux  
+- 📌 Instalação simples e direta do Portainer no Ubuntu, usando Docker e Docker Compose.
+
+#### 🔹 [Como instalar o Portainer no Ubuntu — Diego Oliveira](https://www.youtube.com/watch?v=sMNjmjx9Qes)
+- 📺 **Canal:** Diego Oliveira  
+- 🧠 Explicação clara e objetiva, ideal para quem está começando com Docker e quer usar uma interface gráfica para gerenciar seus containers.
+
+#### 🔹 [Docker Swarm + Portainer: gerenciamento via interface web — Bóson Treinamentos](https://www.youtube.com/watch?v=sf6aOaycK7E)
+- 📺 **Canal:** Bóson Treinamentos  
+- ⚙️ Mostra o uso do Portainer com Docker Swarm, útil se você já está explorando orquestração de containers no Ubuntu.
+
+---
+
+### 📚 Artigos e Tutoriais
+
+#### 🔹 [Como instalar o Portainer no Ubuntu 22.04 (SempreUpdate)](https://sempreupdate.com.br/como-instalar-o-portainer-no-ubuntu-22-04-lts/)
+- 📘 Guia completo com todos os comandos necessários e explicações detalhadas sobre o funcionamento do Portainer no Ubuntu Server.
+
+#### 🔹 [Documentação Docker (com tradução automática)](https://docs.docker.com/samples/portainer/)
+- 🔗 Exemplo oficial de configuração do Portainer usando Docker.  
+- 💡 *Dica:* Use o navegador com tradução automática (Chrome ou Edge) para facilitar a leitura em português.
+
+---
+
+### 💎 Extras
+
+- 📦 [Portainer com Kubernetes no Ubuntu (YouTube)](https://www.youtube.com/watch?v=ZbPZ4CM8-gc)  
+  Guia para quem quer usar o Portainer para gerenciar clusters Kubernetes.
+- 📄 [Documentação oficial do Portainer](https://docs.portainer.io)  
+  *(Use a tradução automática do navegador se preferir em português.)*
+> **Dica:** Se você está usando o Ubuntu Server, certifique-se de seguir as instruções para configurar o Docker e o Docker Compose.
+
+## ⚙️ Configuração do `docker-compose.yml`
 O arquivo `docker-compose.yml` define os serviços, volumes e redes necessários para executar o Portainer. Abaixo está uma explicação detalhada de cada seção:
 
 ### Serviços
