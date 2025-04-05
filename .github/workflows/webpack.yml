@@ -2,9 +2,9 @@ name: 🚀 NodeJS com Webpack - CI Automatizado
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -42,4 +42,3 @@ jobs:
         with:
           name: bundle
           path: dist/
-

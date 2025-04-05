@@ -3,15 +3,21 @@ import react from 'eslint-plugin-react';
 import prettier from 'eslint-plugin-prettier';
 
 export default [
+  // 👇 Correto: ignora primeiro!
+  {
+    ignores: ['dist/**', 'node_modules/**', 'eslint.config.js'],
+  },
   js.configs.recommended,
   {
-    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
       globals: {
-        browser: true,
-        node: true,
+        console: true,
+        process: true,
+        module: true,
+        require: true,
       },
     },
     plugins: {
@@ -23,7 +29,7 @@ export default [
       curly: 'error',
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
-      'no-console': 'warn',
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
       'prettier/prettier': [
         'error',
         {

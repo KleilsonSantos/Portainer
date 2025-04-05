@@ -1,1 +1,1 @@
-console.log("🚀 Webpack funcionando!");
+console.log('Hello World - Portainer');
