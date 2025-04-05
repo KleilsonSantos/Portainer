@@ -27,9 +27,8 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/KleilsonSantos/Portainer
    cd seu-repositorio
-
 
 
 # 🚀 Portainer com Docker Compose 
@@ -152,7 +151,7 @@ Este projeto está licenciado sob a licença **MIT**. Consulte o arquivo `LICENS
 Se você tiver dúvidas ou problemas, entre em contato:
 
 - Email: kleilson@icloud.com
-- GitHub Issues: [Abrir uma issue](https://github.com/seu-usuario/seu-repositorio/issues)
+- GitHub Issues: [Abrir uma issue](https://github.com/KleilsonSantos/Portainer/issues)
 
 ---
 
