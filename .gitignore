@@ -1,0 +1,32 @@
+# Ignorar arquivos e diretórios gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar arquivos de configuração locais
+.env
+.env.*
+
+# Ignorar volumes e dados persistentes do Docker
+volumes/
+portainer_data/
+
+# Ignorar arquivos gerados pelo editor/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignorar arquivos de cache e dependências
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar arquivos de build
+dist/
+build/
