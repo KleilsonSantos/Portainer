@@ -3,7 +3,6 @@ import react from 'eslint-plugin-react';
 import prettier from 'eslint-plugin-prettier';
 
 export default [
-  // 👇 Correto: ignora primeiro!
   {
     ignores: ['dist/**', 'node_modules/**', 'eslint.config.js'],
   },
