@@ -1,0 +1,52 @@
+{
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "lint": "^0.8.19",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3"
+  },
+  "name": "portainer",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "add": "husky add .husky/pre-commit 'npm test'",
+    "lint": "eslint . --ext .js,.ts,.tsx,.jsx",
+    "format": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KleilsonSantos/Portainer.git"
+  },
+  "keywords": [
+    "portainer",
+    "docker",
+    "kubernetes",
+    "monitoring",
+    "monitoring-tools"
+  ],
+  "author": "Kleilson Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KleilsonSantos/Portainer/issues"
+  },
+  "homepage": "https://github.com/KleilsonSantos/Portainer#readme"
+}
