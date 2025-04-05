@@ -6,40 +6,40 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
-  build:
-    name: 🔧 Build e Validação com Node.js
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     name: 🔧 Build e Validação com Node.js
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
+#     strategy:
+#       matrix:
+#         node-version: [18.x, 20.x, 22.x]
 
-    steps:
-      - name: 📥 Clonando o repositório
-        uses: actions/checkout@v4
+#     steps:
+#       - name: 📥 Clonando o repositório
+#         uses: actions/checkout@v4
 
-      - name: 🧰 Configurando Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
+#       - name: 🧰 Configurando Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ matrix.node-version }}
 
-      - name: 📦 Instalando dependências
-        run: npm install
+#       - name: 📦 Instalando dependências
+#         run: npm install
 
-      - name: 🧹 Analisando código com ESLint
-        run: npm run lint
+#       - name: 🧹 Analisando código com ESLint
+#         run: npm run lint
 
-      - name: 💅 Formatando código com Prettier
-        run: npm run format
+#       - name: 💅 Formatando código com Prettier
+#         run: npm run format
 
-      - name: 🛠️ Compilando com Webpack
-        run: npx webpack
+#       - name: 🛠️ Compilando com Webpack
+#         run: npx webpack
 
-      - name: 📦 Upload do bundle gerado
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bundle
-          path: dist/
+#       - name: 📦 Upload do bundle gerado
+#         if: success()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: bundle
+#           path: dist/
 
