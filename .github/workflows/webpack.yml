@@ -42,3 +42,4 @@ jobs:
         with:
           name: bundle-${{ github.run_id }}
           path: dist/
+          overwrite: true
