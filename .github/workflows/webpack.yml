@@ -2,9 +2,9 @@ name: 🚀 NodeJS com Webpack - CI Automatizado
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -43,4 +43,3 @@ jobs:
           name: bundle-${{ github.run_id }}
           path: dist/
           overwrite: true
-
