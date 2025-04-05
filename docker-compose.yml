@@ -4,8 +4,8 @@ services:
     container_name: portainer
     restart: always
     ports:
-      - "9000:9000"
-      - "8000:8000"
+      - '9000:9000'
+      - '8000:8000'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
@@ -14,7 +14,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - portainer_net  # 👈 conecta na rede nomeada
+      - portainer_net # 👈 conecta na rede nomeada
 
 volumes:
   portainer_data:
@@ -22,5 +22,5 @@ volumes:
 
 networks:
   portainer_net:
-    name: portainer_network  # 👈 nome visível no Docker
+    name: portainer_network # 👈 nome visível no Docker
     driver: bridge

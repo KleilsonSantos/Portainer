@@ -1,0 +1,22 @@
+#!/bin/sh
+echo ""
+echo "🎉 Pós-commit iniciado com sucesso! 🔧"
+
+# Exibir informações do último commit
+echo "🔎 Último commit realizado: $(git log -1 --pretty=format:'%h - %an - %s')"
+
+# Rodar Prettier para garantir formatação (opcional)
+#echo "🎨 Formatando arquivos modificados..."
+#npm run format
+
+# Rodar testes após o commit
+#echo "🧪 Rodando testes unitários..."
+# npm test
+# if [ $? -ne 0 ]; then
+#   echo "❌ Testes falharam após o commit! Certifique-se de revisar os erros."
+#   exit 1
+# fi
+
+echo "✅ Pós-commit concluído! 🚀 Vamos continuar com o desenvolvimento."
+echo "🔄 Pronto para o próximo commit!"
+echo ""
