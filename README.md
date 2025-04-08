@@ -1,18 +1,23 @@
-# 🚀 Portainer com Docker Compose
+# 🚀 Portainer com Docker Compose e Integração com Webpack, Esli Jest e SonarQube
 
-## [Status: 🚧 Em Construção] - 🏗️ melhorias em andamento!
+## [Status: 🚧 Em Construção] - 🏗️ Melhorias em andamento!
 
-![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&style=flat-square)
-![Portainer](https://img.shields.io/badge/Portainer-Management-orange?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![🐳 Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&style=flat-square)
+![📦 Portainer](https://img.shields.io/badge/Portainer-Management-orange?style=flat-square)
+![🔧 Webpack](https://img.shields.io/badge/Webpack-Bundler-blue?logo=webpack&style=flat-square)
+![🧪 Jest](https://img.shields.io/badge/Jest-Testing-red?logo=jest&style=flat-square)
+![🔍 SonarQube](https://img.shields.io/badge/SonarQube-Analysis-brightgreen?logo=sonarqube&style=flat-square)
+![📜 License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Portainer é uma poderosa ferramenta de gerenciamento de containers que simplifica a administração de ambientes Docker e Kubernetes. Este repositório fornece um exemplo prático de como configurar o Portainer usando **Docker Compose**.
+O **Portainer** é uma poderosa ferramenta de gerenciamento de containers que simplifica a administração de ambientes Docker e Kubernetes. Este repositório fornece um exemplo prático de como configurar o Portainer usando **Docker Compose**, além de integrar ferramentas modernas como **Webpack**, **Jest** e **SonarQube** para desenvolvimento e análise de qualidade de código.
 
 ---
 
 ## 📖 O que é o Portainer?
 
 O **Portainer** é uma interface gráfica para gerenciar containers, imagens, volumes e redes Docker. Ele é ideal para desenvolvedores e administradores que desejam uma solução simples e eficiente para gerenciar seus ambientes de containerização.
+
+---
 
 ## 🛠️ Configuração do Ambiente
 
@@ -22,136 +27,148 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 
 - 🐳 **Docker** (versão 20.10 ou superior)
 - 🐙 **Docker Compose** (versão 2.0 ou superior)
+- 📦 **Node.js** (versão 18.x ou superior)
+- 🧪 **SonarQube** (opcional, para análise de qualidade de código)
 
-### Passos para Configuração
+---
 
-1. Clone este repositório:
+### ⚙️ Passos para Configuração
+
+1. **Clone este repositório**:
 
    ```bash
    git clone https://github.com/KleilsonSantos/Portainer
-   cd seu-repositorio
+   cd Portainer
    ```
 
-2. Suba o ambiente com o Docker Compose:
+2. **Instale as dependências do projeto**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Suba o ambiente com o Docker Compose**:
 
    ```bash
    docker-compose up -d
    ```
 
-3. Acesse o Portainer no navegador:
+4. **Acesse o Portainer no navegador**:
    ```
    http://localhost:9000
    ```
 
-## 📺 Referências em Português — Portainer no Ubuntu
-
-Se você quer aprender mais sobre o uso do **Portainer com Docker no Ubuntu**, aqui estão vídeos e artigos em **português brasileiro** que mostram tudo passo a passo. 💡
-
 ---
 
-### 🎥 Vídeos no YouTube
+## 🧰 Scripts Disponíveis
 
-#### 🔹 [Instalando o Portainer no Ubuntu com Docker — Dicas de Linux](https://www.youtube.com/watch?v=V5T1qNXE5Z8)
+### 🔧 Desenvolvimento
 
-- 📺 **Canal:** Dicas de Linux
-- 📌 Instalação simples e direta do Portainer no Ubuntu, usando Docker e Docker Compose.
+- **Iniciar o servidor de desenvolvimento com Webpack**:
 
-#### 🔹 [Como instalar o Portainer no Ubuntu — Diego Oliveira](https://www.youtube.com/watch?v=sMNjmjx9Qes)
+  ```bash
+  npm run start
+  ```
 
-- 📺 **Canal:** Diego Oliveira
-- 🧠 Explicação clara e objetiva, ideal para quem está começando com Docker e quer usar uma interface gráfica para gerenciar seus containers.
+- **Compilar o projeto para produção**:
+  ```bash
+  npm run build
+  ```
 
-#### 🔹 [Docker Swarm + Portainer: gerenciamento via interface web — Bóson Treinamentos](https://www.youtube.com/watch?v=sf6aOaycK7E)
+### 🧪 Testes
 
-- 📺 **Canal:** Bóson Treinamentos
-- ⚙️ Mostra o uso do Portainer com Docker Swarm, útil se você já está explorando orquestração de containers no Ubuntu.
+- **Executar testes unitários com Jest**:
 
----
+  ```bash
+  npm test
+  ```
 
-### 📚 Artigos e Tutoriais
+- **Gerar relatório de cobertura de testes**:
 
-#### 🔹 [Como instalar o Portainer no Ubuntu 22.04 (SempreUpdate)](https://sempreupdate.com.br/como-instalar-o-portainer-no-ubuntu-22-04-lts/)
+  ```bash
+  npm run test:coverage
+  ```
 
-- 📘 Guia completo com todos os comandos necessários e explicações detalhadas sobre o funcionamento do Portainer no Ubuntu Server.
+- **Executar testes com integração ao SonarQube**:
+  ```bash
+  npm run test:coverage:sonar
+  ```
 
-#### 🔹 [Documentação Docker (com tradução automática)](https://docs.docker.com/samples/portainer/)
+### 🧹 Lint e Formatação
 
-- 🔗 Exemplo oficial de configuração do Portainer usando Docker.
-- 💡 _Dica:_ Use o navegador com tradução automática (Chrome ou Edge) para facilitar a leitura em português.
+- **Executar ESLint para verificar problemas no código**:
 
----
+  ```bash
+  npm run lint
+  ```
 
-### 💎 Extras
+- **Corrigir problemas de lint automaticamente**:
 
-- 📦 [Portainer com Kubernetes no Ubuntu (YouTube)](https://www.youtube.com/watch?v=ZbPZ4CM8-gc)  
-  Guia para quem quer usar o Portainer para gerenciar clusters Kubernetes.
-- 📄 [Documentação oficial do Portainer](https://docs.portainer.io)  
-   _(Use a tradução automática do navegador se preferir em português.)_
-  > **Dica:** Se você está usando o Ubuntu Server, certifique-se de seguir as instruções para configurar o Docker e o Docker Compose.
+  ```bash
+  npm run lint --fix
+  ```
 
-## ⚙️ Configuração do `docker-compose.yml`
+- **Formatar o código com Prettier**:
+  ```bash
+  npm run format
+  ```
 
-O arquivo `docker-compose.yml` define os serviços, volumes e redes necessários para executar o Portainer. Abaixo está uma explicação detalhada de cada seção:
+### 🔍 Análise de Qualidade com SonarQube
 
-### Serviços
-
-#### `portainer`
-
-- **Imagem**: `portainer/portainer-ce:latest` (versão mais recente do Portainer Community Edition).
-- **Nome do container**: `portainer`.
-- **Reinício automático**: Configurado para reiniciar sempre (`restart: always`).
-- **Portas expostas**:
-  - `9000:9000`: Interface web do Portainer.
-  - `8000:8000`: API para agentes do Portainer.
-- **Volumes montados**:
-  - `/var/run/docker.sock:/var/run/docker.sock`: Permite que o Portainer gerencie o Docker diretamente.
-  - `portainer_data:/data`: Armazena os dados persistentes do Portainer.
-- **Variáveis de ambiente**:
-  - `TZ=America/Sao_Paulo`: Define o fuso horário para o container.
-- **Opções de segurança**:
-  - `no-new-privileges:true`: Garante que o container não possa obter privilégios adicionais.
-- **Rede**:
-  - Conectado à rede nomeada `portainer_net`.
-
-### Volumes
-
-#### `portainer_data`
-
-- **Nome**: `portainer_data`.
-- **Descrição**: Volume persistente para armazenar os dados do Portainer, como configurações e informações de containers.
-
-### Redes
-
-#### `portainer_net`
-
-- **Nome**: `portainer_network`.
-- **Driver**: `bridge` (rede padrão do Docker para comunicação entre containers).
+- **Executar análise de qualidade com SonarQube**:
+  ```bash
+  npm run sonar:scanner
+  ```
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```plaintext
-/home/operador/Development/Devops/Docker/docker-compose/portainer/
-├── docker-compose.yml  # Configuração do Docker Compose
-├── README.md           # Documentação do projeto
-└── outros arquivos...  # Outros arquivos necessários
+/home/operador/Development/Devops/Docker/portainer/
+├── .github/                # ⚙️ Configurações de workflows do GitHub Actions
+├── .husky/                 # 🛡️ Hooks de pré-commit e pré-push
+├── .vscode/                # 🖥️ Configurações do Visual Studio Code
+├── coverage/               # 🧪 Relatórios de cobertura de testes
+├── src/                    # 📂 Código-fonte do projeto
+│   ├── index.js            # 🏁 Arquivo principal
+│   ├── vendor.js           # 📦 Arquivo de dependências externas
+│   ├── index.html          # 🌐 Template HTML
+│   ├── setup-jest.js       # ⚙️ Configuração do Jest
+│   └── tests/              # 🧪 Testes unitários
+├── docker-compose.yml      # 🐳 Configuração do Docker Compose
+├── jest.config.js          # 🧪 Configuração do Jest
+├── webpack.config.js       # 🔧 Configuração do Webpack
+├── package.json            # 📦 Dependências e scripts do projeto
+└── README.md               # 📖 Documentação do projeto
 ```
 
 ---
 
-## 🌟 Recursos do Portainer
+## 🌟 Recursos do Projeto
 
-- Interface amigável para gerenciar containers.
-- Suporte a múltiplos ambientes (Docker, Kubernetes, etc.).
-- Gerenciamento de volumes, redes e imagens.
-- Monitoramento em tempo real.
+### 🐳 Docker Compose
 
----
+- Configuração para rodar o **Portainer**, **SonarQube** e **PostgreSQL**.
+- Volumes persistentes para dados e logs.
+- Rede customizada para comunicação entre serviços.
 
-## 🧑‍💻 Contribuindo
+### 📦 Webpack
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+- Configuração para build de produção e desenvolvimento.
+- Suporte a múltiplos pontos de entrada (`index.js` e `vendor.js`).
+- Plugins para geração de HTML e limpeza de diretórios.
+
+### 🧪 Jest
+
+- Testes unitários com cobertura de código.
+- Relatórios em formatos HTML, JSON e LCOV.
+- Integração com SonarQube para análise de qualidade.
+
+### 🔍 SonarQube
+
+- Análise de qualidade de código com suporte a JavaScript e TypeScript.
+- Relatórios detalhados de cobertura e vulnerabilidades.
 
 ---
 
@@ -165,11 +182,11 @@ Este projeto está licenciado sob a licença **MIT**. Consulte o arquivo `LICENS
 
 Se você tiver dúvidas ou problemas, entre em contato:
 
-- Email: kleilson@icloud.com
-- GitHub Issues: [Abrir uma issue](https://github.com/KleilsonSantos/Portainer/issues)
+- 📧 **Email**: kleilson@icloud.com
+- 🐛 **GitHub Issues**: [Abrir uma issue](https://github.com/KleilsonSantos/Portainer/issues)
 
 ---
 
 💡 **Dica:** Não se esqueça de configurar suas credenciais de administrador ao acessar o Portainer pela primeira vez!
 
-🧱 Nota: Este projeto está sendo expandido com melhorias contínuas. Em breve: suporte a autenticação LDAP, integração com Docker Swarm e muito mais!
+🧱 **Nota:** Este projeto está sendo expandido com melhorias contínuas. Em breve: suporte a autenticação LDAP, integração com Docker Swarm e muito mais!

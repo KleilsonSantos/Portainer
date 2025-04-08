@@ -1,32 +1,58 @@
-# Ignorar arquivos e diretórios gerados pelo sistema operacional
-.DS_Store
-Thumbs.db
+# 💻 Ignorar arquivos e diretórios gerados pelo sistema operacional
+.DS_Store       # 🍏 macOS
+Thumbs.db       # 🪟 Windows
 
-# Ignorar logs e arquivos temporários
-*.log
-*.tmp
-*.bak
-*.swp
+# 📝 Ignorar logs e arquivos temporários
+*.log           # 📄 Arquivos de log
+*.tmp           # ⏱️ Arquivos temporários
+*.bak           # 🧱 Backups
+*.swp           # 🌀 Arquivos de swap (Vim)
 
-# Ignorar arquivos de configuração locais
-.env
-.env.*
+# 🔐 Ignorar arquivos de configuração locais
+.env            # 🌱 Variáveis de ambiente
+.env.*          # 🌿 Outras variações de .env
 
-# Ignorar volumes e dados persistentes do Docker
-volumes/
-portainer_data/
+# 🐳 Ignorar volumes e dados persistentes do Docker
+volumes/                         # 📦 Volumes persistentes
+portainer_data/                  # 📊 Dados do Portainer
+docker-compose.override.yml     # 🧩 Overrides de Compose
 
-# Ignorar arquivos gerados pelo editor/IDE
-.vscode/
-.idea/
-*.code-workspace
+# 🧠 Ignorar arquivos gerados pelo editor/IDE
+.vscode/            # 🧪 Configurações do VS Code
+.idea/              # 🧠 Configurações do JetBrains
+*.code-workspace    # 🧷 Workspaces do VS Code
 
-# Ignorar arquivos de cache e dependências
-node_modules/
-__pycache__/
-*.pyc
-*.pyo
+# 🗂️ Ignorar arquivos de cache e dependências
+node_modules/       # 📦 Dependências do Node.js
+__pycache__/        # 🐍 Cache do Python
+*.pyc               # ⚙️ Arquivos compilados do Python
+*.pyo               # ⚙️ Outras variações compiladas
 
-# Ignorar arquivos de build
-dist/
-build/
+# 🏗️ Ignorar arquivos de build
+dist/               # 🚀 Saída do Webpack/Bundlers
+build/              # 🏭 Diretório de build
+
+# 🧊 Ignorar cache do Webpack
+.cache/             # 🧠 Cache de builds
+
+# 📉 Ignorar relatórios de erros do Webpack
+stats.json          # 📊 Estatísticas de build
+
+# 🧪 Ignorar relatórios de cobertura de testes
+coverage/           # 📈 Cobertura de testes
+coverage.json       # 📊 Estatísticas de cobertura
+coverage/
+
+# 🔒 Ignorar arquivos de lock de dependências (opcional)
+package-lock.json   # 📦 npm
+yarn.lock           # 🧶 yarn
+
+# 🧠 Ignorar arquivos de configuração do SonarLint (opcional)
+.scannerwork/ # 🧠 Configurações do SonarLint
+
+# 🔐 Ignorar arquivos de lock de dependências (opcional)
+.sonarlint/ # 🔐 Arquivos de lock de dependências
+node_modules
+
+# 📊 Ignorar relatórios de testes (opcional)
+test-report.html # 📊 Relatório de testes

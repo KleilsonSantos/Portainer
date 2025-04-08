@@ -1,26 +1,77 @@
 services:
   portainer:
-    image: portainer/portainer-ce:latest
-    container_name: portainer
-    restart: always
+    image: portainer/portainer-ce:latest # 📦 Portainer CE (Community Edition) image
+    container_name: portainer # 🏷️ Container name
+    restart: always # 🔁 Automatically restarts if it stops
     ports:
-      - '9000:9000'
-      - '8000:8000'
+      - '9000:9000' # 🌐 Web access
+      - '8000:8000' # 🛠️ Agent access
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock # 🧩 Direct communication with Docker
+      - portainer-data:/data # 💾 Volume for data persistence
     environment:
-      - TZ=America/Sao_Paulo
+      - TZ=America/Sao_Paulo # 🕒 Set the timezone
     security_opt:
-      - no-new-privileges:true
+      - no-new-privileges:true # 🔐 Prevent privilege escalation
     networks:
-      - portainer_net # 👈 conecta na rede nomeada
+      - portainer-network # 🌐 Connects to the named network
+
+  # 🛠️ PostgreSQL for SonarQube
+  postgres:
+    image: postgres:14 # 📦 PostgreSQL 14 image
+    container_name: postgres-portainer # 🏷️ Container name
+    ports:
+      - '5432:5432' # 🌐 Web access
+    restart: always # 🔁 Automatically restarts if it stops
+    environment:
+      POSTGRES_DB: sonarqube # 🗄️ Database name
+      POSTGRES_USER: sonarqube # 👤 Database username
+      POSTGRES_PASSWORD: sonarqube # 🔑 Database password
+      POSTGRES_INITDB_ARGS: '--encoding=UTF8 --locale=en_US.UTF-8' # 🌍 Database encoding and locale
+      POSTGRES_HOST_AUTH_METHOD: trust # 🔐 Authentication method
+    volumes:
+      - postgres-portainer-data:/var/lib/postgresql/data # 💾 Volume for data persistence
+    networks:
+      - portainer-network # 🌐 Connects to the named network
+
+  # 📊 SonarQube service
+  sonarqube:
+    image: sonarqube:lts # 📦 SonarQube LTS image
+    container_name: sonarqube-portainer # 🏷️ Container name
+    restart: always # 🔁 Automatically restarts if it stops
+    depends_on:
+      - postgres # 🐘 Depends on PostgreSQL
+    ports:
+      - '9090:9090' # 🌐 Web access
+    environment:
+      - SONAR_JDBC_URL=jdbc:postgresql://postgres-portainer:5432/sonarqube # 🐘 PostgreSQL connection URL
+      - SONAR_JDBC_USERNAME=sonarqube # 👤 Database username
+      - SONAR_JDBC_PASSWORD=sonarqube # 🔑 Database password
+      - SONARQUBE_JVM_OPTIONS='-Xmx4G -Xms4G' # 📊 JVM memory configuration
+    volumes:
+      - sonarqube-portainer-data:/opt/sonarqube/data # 💾 Volume for data persistence
+      - sonarqube-portainer-logs:/opt/sonarqube/logs # 📜 Volume for logs
+      - sonarqube-portainer-extensions:/opt/sonarqube/extensions # 📦 Volume for extensions
+    networks:
+      - portainer-network # 🌐 Connects to the named network
 
 volumes:
-  portainer_data:
-    name: portainer_data
+  portainer-data: # 💽 Named volume
+    name: portainer-data # 🏷️ Visible Docker volume name
+
+  postgres-portainer-data: # 💽 Named volume
+    name: postgres-portainer-data # 🏷️ Visible Docker volume name
+
+  sonarqube-portainer-data: # 💽 Named volume
+    name: sonarqube-portainer-data # 🏷️ Visible Docker volume name
+
+  sonarqube-portainer-extensions: # 💽 Named volume
+    name: sonarqube-portainer-extensions # 🏷️ Visible Docker volume name
+
+  sonarqube-portainer-logs: # 💽 Named volume
+    name: sonarqube-portainer-logs # 🏷️ Visible Docker volume name
 
 networks:
-  portainer_net:
-    name: portainer_network # 👈 nome visível no Docker
-    driver: bridge
+  portainer-network: # 🌐 Custom network
+    name: portainer-network # 🏷️ Visible Docker network name
+    driver: bridge # 🌉 Bridge network driver
